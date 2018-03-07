@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Chedianai\\LaravelCarParts\\": "src/"
+            "hachi\LaravelWechatThirdWork": "src/"
         }
     },
     "require": {
