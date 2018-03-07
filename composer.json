@@ -1,0 +1,30 @@
+{
+    "name": "hachi-zzq/laravel-wechat-third-work",
+    "description": "企业号第三方SDK for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zhengqian.Zhu",
+            "email": "hachi.zzq@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Chedianai\\LaravelCarParts\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "5.*",
+        "overtrue/laravel-wechat": "4.0.6"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        },
+        {
+            "packagist": false
+        }
+    ]
+}
