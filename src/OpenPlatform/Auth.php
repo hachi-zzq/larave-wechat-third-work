@@ -284,4 +284,32 @@ class Auth
 
         return $response;
     }
+
+
+    /**
+     * 设置某次授权信息
+     * @param $authType
+     * @return mixed|ResponseInterface
+     * @throws RequestWeChatException
+     */
+    public function setAuthSessionInfo($authType)
+    {
+        $response = $this->sendRequest('cgi-bin/service/set_session_info',[
+            'query'=>[
+                'suite_access_token'=>$this->getSuiteAccessToken()
+            ],
+            'json'=>[
+                'pre_auth_code'=>$this->getPreAuthCode(),
+                'session_info'=>[
+                    'auth_type'=>$authType
+                ]
+            ]
+        ]);
+        $response = json_decode($response->getBody()->getContents(), true);
+        if (isset($response['errcode']) && $response['errcode'] != 0) {
+            throw new RequestWeChatException($response['errmsg']);
+        }
+
+        return $response;
+    }
 }
