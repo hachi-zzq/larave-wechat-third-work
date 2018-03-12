@@ -91,9 +91,7 @@ class AccessToken extends BaseAccessToken
             'query' => [
                 'suite_access_token' => $suiteAccessToken
             ],
-            'json'  => [
-                $credentials
-            ]
+            'json'  => $credentials
         ];
 
         return $this->setHttpClient($this->app['http_client'])->request($this->getEndpoint(), $this->requestMethod, $options);
