@@ -49,8 +49,12 @@ class Application extends EasyWechatWorkApplication
         \EasyWeChat\Work\Jssdk\ServiceProvider::class,
     ];
 
-    public static function make(array $config)
+    public static function make(array $config,$newInstance=false)
     {
+        if($newInstance){
+            return new self($config);
+        }
+
         if(self::$instance){
             return self::$instance;
         }
